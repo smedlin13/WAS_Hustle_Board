@@ -1,6 +1,6 @@
 class Api::MileagesController < ApplicationController
   before_action :set_mileage, only: [:show, :update, :destroy]
-
+  before_action :authenticate_user!
   def index
     render json: current_user.mileages
   end
