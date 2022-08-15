@@ -8,3 +8,14 @@ Built using Ruby version 3.1.1
 This site was built using React.js 
 
 Gems installed: Devise, Pry, Rails 7.0.2
+
+To run:
+
+```WAS_Hustle_Board % bundle exec rails s -p 3001```
+
+split your terminal and run
+
+```WAS_Hustle_Board % cd client```
+```WAS_Hustle_Board/client % yarn start```
+
+
