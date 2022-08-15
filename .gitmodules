@@ -1,0 +1,3 @@
+[submodule "sub"]
+	path = sub
+	url = git@github.com:smedlin13/WAS_Hustle_Board.git
