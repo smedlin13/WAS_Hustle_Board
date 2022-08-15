@@ -1,21 +1,27 @@
 import {MileageConsumer} from '../../providers/MileageProvider'; 
 import { AuthConsumer } from '../../providers/AuthProvider';
 import {Link} from 'react-router-dom';
-import MileageForm from './MileageForm';
-import React from 'react';
 import { useState, useEffect } from 'react'; 
+import Mileage from './Mileage';
 
-const MileageList = ({ name, mileages}) => {
+const MileageList = ({ mileages, updateMileage, deleteMileage}) => {
   const [user, setUser] = useState({ name: ''})
 
   return(
     <>
       <div>
-      <h3>{name}</h3>
+       
         { mileages.map( (m) => (
           <>
+          <Link to={`/mileages/${m.id}`}>
+            <Mileage {...m} key={m.id}
+          updateMileage={updateMileage}
+          deleteMileage={deleteMileage}
+          />
+          </Link>
           <p>{m.date}</p>
           <p>{m.miles}</p>
+
           </>
         )) }
       </div>
@@ -23,10 +29,10 @@ const MileageList = ({ name, mileages}) => {
   );
 }
 
-// const connectedMileageList = (props) => (
-//   <MileageConsumer>
-//     { value => <MileageList {...props} {...value} />}
-//   </MileageConsumer>
-// )
+const connectedMileageList = (props) => (
+  <MileageConsumer>
+    { value => <MileageList {...props} {...value} />}
+  </MileageConsumer>
+)
 
 export default MileageList;

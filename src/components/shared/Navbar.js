@@ -7,10 +7,25 @@ const Navbar = ({user, handleLogout }) => {
     // links to show up when logged in
     if (user) {
       return (
-        <>
+        <>         
           <li onClick={ () => handleLogout() }>
             Logout
           </li>
+          <Link to='/profile'>
+            <li>
+              Profile
+            </li>
+          </Link>
+          <Link to='/mileages'>
+            <li>
+              Miles Covered
+            </li>
+          </Link>
+          <Link to='/leaderboard'>
+            <li>
+              Leaderboard
+            </li>
+          </Link>
         </>
       )
     } else {
@@ -25,6 +40,11 @@ const Navbar = ({user, handleLogout }) => {
           <Link to='/register'>
             <li>
               Register
+            </li>
+          </Link>
+          <Link to='/leaderboard'>
+            <li>
+              Leaderboard
             </li>
           </Link>
         </>

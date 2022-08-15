@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 
-const MileageForm = ({id, miles, date, addMileage, updateMileage, setAdding}) => {
+const MileageForm = ({id, miles, date, setAdd, addMileage, updateMileage}) => {
   const [mileage, setMileage] = useState({ date: '', miles: 0})
-
+  // const [editing, setEdit] = useState(false)
 
   useEffect( () => {
     if (id) {
@@ -19,7 +19,7 @@ const MileageForm = ({id, miles, date, addMileage, updateMileage, setAdding}) =>
       addMileage(mileage)
     } 
     setMileage({date: '', miles: ''})
-    }
+  }
   
 
   

@@ -20,7 +20,7 @@ const MileageProvider = ({ children }) => {
     axios.post('/api/mileages', { mileage })
       .then( res => setMileages([...mileages, res.data]))
       .catch( err => console.log(err))
-      navigate('/mileages')
+      // navigate('/mileages')
   }
 
   const updateMileage = (id, mileage) => {
@@ -43,7 +43,7 @@ const MileageProvider = ({ children }) => {
       .then( res => {
         setMileages(mileages.filter( r => r.id !== id))
         alert(res.data.message)
-        navigate('/dashboard')
+        navigate('/')
       })
       .catch( err => console.log(err))
   }

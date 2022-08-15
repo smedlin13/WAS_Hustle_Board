@@ -3,7 +3,7 @@ import MileageForm from './MileageForm';
 import {MileageConsumer} from '../../providers/MileageProvider';
 import MileageList from './MileageList';
 
-const Mileages = ({ mileages, getAllMileages, addMileage }) => {
+const Mileages = ({ mileages, miles, getAllMileages, totalMiles, addMileage }) => {
   const [adding, setAdding] = useState(false)
 
   // useEffect( () => {
@@ -13,8 +13,18 @@ const Mileages = ({ mileages, getAllMileages, addMileage }) => {
   return (
     <>
     <h1>Miles</h1>
+    { adding ?
+          <>
+            <MileageForm addMileage={addMileage} />
+            <button variant="info" onClick={() => setAdding(false)}>Cancel</button>
+          </>
+        :
+        <button variant="info" onClick={() => setAdding(true)}>+</button>
+      }
+
           <MileageForm addMileage={addMileage} onClick={() => setAdding(true)} />
           <MileageList mileages={mileages}/>
+    
     </>
     )
   }
