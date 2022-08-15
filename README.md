@@ -16,6 +16,8 @@ To run:
 split your terminal and run
 
 ```WAS_Hustle_Board % cd client```
+
+
 ```client % yarn start```
 
 
